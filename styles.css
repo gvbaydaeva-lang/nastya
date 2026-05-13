@@ -276,11 +276,6 @@ p {
   max-width: var(--measure);
 }
 
-.lead {
-  font-size: 1rem;
-  line-height: 1.58;
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
