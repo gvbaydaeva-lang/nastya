@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Обучение удалённым профессиям | InSTART</title>
+  <meta name="description" content="Онлайн-платформа InSTART: обучение удалённым навыкам, бессрочный доступ, бесплатные обновления, поддержка куратора и помощь в поиске клиентов." />
+  <style>
+    :root {
+      --bg: #fbf7f2;
+      --card: #ffffff;
+      --text: #262323;
+      --muted: #6f6864;
+      --accent: #13a7a7;
+      --accent-dark: #0c7678;
+      --soft: #f1e8df;
+      --pink: #e8578b;
+      --shadow: 0 18px 45px rgba(65, 49, 38, 0.12);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 70px 0; }
+    .section-title {
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.05;
+      margin: 0 0 20px;
+      letter-spacing: -0.03em;
+    }
+    .section-text {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 780px;
+      margin: 0 0 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 0 30px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 12px 25px rgba(19, 167, 167, 0.25);
+      transition: 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--accent-dark); }
+    .btn.secondary { background: #fff; color: var(--accent-dark); border: 1px solid rgba(19,167,167,.24); box-shadow: none; }
+
+    .hero {
+      padding: 28px 0 80px;
+      background: radial-gradient(circle at 80% 10%, #ffe5ef 0, transparent 34%), linear-gradient(180deg, #fff 0%, var(--bg) 100%);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 0 52px;
+    }
+    .logo { font-weight: 900; font-size: 22px; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 15px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 46px;
+      align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(65, 49, 38, 0.08);
+    }
+    h1 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 0.98;
+      margin: 0 0 24px;
+      letter-spacing: -0.055em;
+    }
+    .hero p { font-size: 21px; color: var(--muted); margin: 0 0 28px; max-width: 650px; }
+    .hero-card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 36px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card-inner {
+      min-height: 420px;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #e7f7f7, #fff2f7);
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-card-inner:after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(19,167,167,.14);
+      right: -80px;
+      bottom: -80px;
+    }
+    .hero-list { display: grid; gap: 14px; position: relative; z-index: 1; }
+    .hero-list span, .check-list span {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 18px;
+    }
+    .hero-list span:before, .check-list span:before {
+      content: "✓";
+      flex: 0 0 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+    }
+    .hero-note {
+      position: relative;
+      z-index: 1;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.78);
+      font-weight: 750;
+    }
+
+    .pain-grid, .features-grid, .paths-grid, .steps-grid, .faq-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .pain-grid { grid-template-columns: repeat(3, 1fr); }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(65, 49, 38, 0.07);
+      border: 1px solid rgba(65,49,38,.06);
+    }
+    .card h3 { margin: 0 0 10px; font-size: 24px; letter-spacing: -0.02em; }
+    .card p { margin: 0; color: var(--muted); font-size: 17px; }
+
+    .platform {
+      background: #fff;
+      border-radius: 40px;
+      padding: 54px;
+      box-shadow: var(--shadow);
+    }
+    .features-grid { grid-template-columns: repeat(3, 1fr); margin-top: 26px; }
+    .mini-label { color: var(--accent-dark); font-weight: 900; text-transform: uppercase; font-size: 13px; letter-spacing: .08em; margin-bottom: 10px; }
+
+    .directions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .direction {
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px;
+      border: 1px solid rgba(19,167,167,.15);
+      font-weight: 800;
+    }
+    .direction small { display: block; margin-top: 8px; color: var(--muted); font-weight: 500; line-height: 1.35; }
+
+    .support-box {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+    .support-accent {
+      background: var(--accent);
+      color: #fff;
+      border-radius: 34px;
+      padding: 36px;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .support-accent h2 { margin: 0; font-size: 38px; line-height: 1.05; letter-spacing: -0.03em; }
+    .check-list { display: grid; gap: 16px; }
+
+    .tariffs-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 30px; }
+    .tariffs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .tariff-img {
+      background: #fff;
+      border-radius: 26px;
+      padding: 10px;
+      box-shadow: 0 14px 35px rgba(65, 49, 38, 0.10);
+      overflow: hidden;
+    }
+    .tariff-img img { border-radius: 18px; width: 100%; height: 100%; object-fit: cover; }
+
+    .results {
+      background: linear-gradient(135deg, #fff 0%, #eefafa 100%);
+      border-radius: 40px;
+      padding: 54px;
+    }
+    .results-placeholder {
+      margin-top: 24px;
+      border: 2px dashed rgba(19,167,167,.35);
+      border-radius: 28px;
+      padding: 34px;
+      color: var(--muted);
+      background: rgba(255,255,255,.6);
+    }
+
+    .steps-grid { grid-template-columns: repeat(3, 1fr); counter-reset: step; }
+    .step { position: relative; padding-top: 58px; }
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 22px; left: 26px;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--accent);
+      color: #fff; font-weight: 900;
+    }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 30px; align-items: center; }
+    .about-photo {
+      min-height: 460px;
+      border-radius: 36px;
+      background: linear-gradient(145deg, #dff6f6, #fff0f5);
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
+      color: var(--accent-dark);
+      font-weight: 900;
+      font-size: 26px;
+    }
+
+    .faq-grid { grid-template-columns: repeat(2, 1fr); }
+    details {
+      background: #fff;
+      border-radius: 22px;
+      padding: 22px 24px;
+      box-shadow: 0 10px 28px rgba(65, 49, 38, 0.07);
+    }
+    summary { cursor: pointer; font-weight: 850; font-size: 19px; }
+    details p { margin: 14px 0 0; color: var(--muted); font-size: 17px; }
+
+    .final {
+      padding: 78px 0;
+      background: #182424;
+      color: #fff;
+      text-align: center;
+    }
+    .final .section-text { color: rgba(255,255,255,.72); margin-left: auto; margin-right: auto; }
+
+    @media (max-width: 960px) {
+      .hero-grid, .support-box, .about-grid { grid-template-columns: 1fr; }
+      .pain-grid, .features-grid, .steps-grid, .tariffs-grid, .directions, .faq-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .platform, .results { padding: 34px; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 48px 0; }
+      .pain-grid, .features-grid, .steps-grid, .tariffs-grid, .directions, .faq-grid { grid-template-columns: 1fr; }
+      .tariffs-head { display: block; }
+      .hero-card-inner { min-height: 360px; }
+      .platform, .results { padding: 26px; border-radius: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="container">
+      <nav class="nav">
+        <a class="logo" href="#top">InSTART с Анастасией</a>
+        <div class="nav-links">
+          <a href="#platform">О платформе</a>
+          <a href="#tariffs">Тарифы</a>
+          <a href="#support">Поддержка</a>
+          <a href="#faq">Вопросы</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Удалённая работа с нуля</div>
+          <h1>Хочешь работать из дома и зарабатывать онлайн, но не знаешь, с чего начать?</h1>
+          <p>Я помогу тебе разобраться в онлайн-сфере, выбрать направление и начать обучение спокойно, без давления и без резких перемен.</p>
+          <a class="btn" href="#contact">Получить консультацию</a>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="hero-list">
+              <span>Подходит новичкам</span>
+              <span>Уроки уже записаны</span>
+              <span>Доступ остаётся навсегда</span>
+              <span>Обновления без доплат</span>
+              <span>Есть поддержка и общий чат</span>
+            </div>
+            <div class="hero-note">Можно учиться дома, в декрете, после работы или в любое свободное время.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Возможно, ты сейчас тоже об этом думаешь</h2>
+        <div class="pain-grid">
+          <div class="card"><h3>Хочется свои деньги</h3><p>Чтобы не зависеть полностью от работы, графика, декрета или чужих решений.</p></div>
+          <div class="card"><h3>Хочется больше времени</h3><p>На ребёнка, семью, себя и обычную жизнь, а не только на дорогу и работу.</p></div>
+          <div class="card"><h3>Страшно начинать</h3><p>Непонятно, что выбрать, хватит ли времени и получится ли разобраться с нуля.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="platform">
+      <div class="container">
+        <div class="platform">
+          <h2 class="section-title">Что такое InSTART</h2>
+          <p class="section-text">Это платформа, где собрано много направлений для удалённой работы в одном месте. Ты не покупаешь один курс на одну тему — у тебя есть возможность попробовать разные навыки и понять, что тебе ближе.</p>
+          <div class="features-grid">
+            <div class="card"><div class="mini-label">Доступ</div><h3>Навсегда</h3><p>Уроки доступны сразу после оплаты. Можно учиться сейчас, сделать паузу и вернуться позже.</p></div>
+            <div class="card"><div class="mini-label">Обновления</div><h3>Без доплат</h3><p>Если на платформе появляются новые уроки или обновления, они добавляются бесплатно.</p></div>
+            <div class="card"><div class="mini-label">Эксперты</div><h3>Практики</h3><p>Уроки записаны действующими специалистами в конкретной сфере, а не одним человеком обо всём.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Что можно изучать внутри</h2>
+        <p class="section-text">Можно выбрать одно направление или совмещать несколько навыков между собой.</p>
+        <div class="directions">
+          <div class="direction">Wildberries и Ozon<small>маркетплейсы, карточки, продвижение</small></div>
+          <div class="direction">Инфографика<small>визуал для товаров и соцсетей</small></div>
+          <div class="direction">Telegram и VK<small>продвижение, контент, реклама</small></div>
+          <div class="direction">SMM<small>ведение соцсетей и оформление</small></div>
+          <div class="direction">Нейросети и ChatGPT<small>тексты, фото, видео, идеи</small></div>
+          <div class="direction">Reels и монтаж<small>короткие видео и контент</small></div>
+          <div class="direction">Чат-боты<small>боты для бизнеса и блога</small></div>
+          <div class="direction">Поиск клиентов<small>как находить первые заказы</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <div class="support-box">
+          <div class="support-accent">
+            <h2>Ты не останешься одна</h2>
+          </div>
+          <div class="card">
+            <p class="section-text">Я как куратор платформы остаюсь с учениками на связи. У нас есть общий чат всех учеников, где мы общаемся, задаём вопросы, делимся информацией и помогаем друг другу.</p>
+            <div class="check-list">
+              <span>Можно задавать вопросы по обучению</span>
+              <span>Есть общение с другими учениками</span>
+              <span>Я помогаю каждому ученику с поиском клиентов</span>
+              <span>Помогаю понять, с чего начать и как применять навыки</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Не нужно сидеть за обучением целыми днями</h2>
+        <p class="section-text">Многие девушки проходят обучение в декрете или параллельно с работой. Ты сама выбираешь, когда учиться и сколько времени уделять. Даже 20–30 минут в день — уже нормальный старт.</p>
+      </div>
+    </section>
+
+    <section class="section" id="tariffs">
+      <div class="container">
+        <div class="tariffs-head">
+          <div>
+            <h2 class="section-title">Тарифы платформы</h2>
+            <p class="section-text">Для комфортного старта есть разные тарифы. Стоимость зависит от наполнения и количества курсов внутри. На всех тарифах доступ бессрочный, обновления без доплат, есть обучение для кураторов и право перепродажи.</p>
+          </div>
+          <a class="btn secondary" href="#contact">Помочь выбрать тариф</a>
+        </div>
+        <div class="tariffs-grid">
+          <div class="tariff-img"><img src="1.jpg" alt="Тариф Базовые курсы InSTART" /></div>
+          <div class="tariff-img"><img src="2.jpg" alt="Тариф Новые направления InSTART" /></div>
+          <div class="tariff-img"><img src="3.jpg" alt="Тариф Всё включено InSTART" /></div>
+          <div class="tariff-img"><img src="4.jpg" alt="Тариф Маркетплейсы InSTART" /></div>
+          <div class="tariff-img"><img src="6.jpg" alt="Тариф Премиум InSTART" /></div>
+          <div class="tariff-img"><img src="7.jpg" alt="Тариф VIP InSTART" /></div>
+          <div class="tariff-img"><img src="8.jpg" alt="Тариф Инфографика InSTART" /></div>
+          <div class="tariff-img"><img src="99.jpg" alt="Тариф Нейростарт InSTART" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="results">
+          <h2 class="section-title">Сколько можно зарабатывать удалённо</h2>
+          <p class="section-text">Каждый день девушки внутри платформы делятся в чате своими результатами. Кто-то берёт первые небольшие заказы, кто-то делает удалённую работу дополнительным доходом, кто-то постепенно переходит в онлайн полностью.</p>
+          <p class="section-text">Ниже можно добавить скриншоты из чата. Это будут не обещания, а живые примеры того, какие результаты получают ученицы, когда начинают применять навыки.</p>
+          <div class="results-placeholder">Место для скриншотов отзывов, отчётов и первых заработков учениц</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Как всё проходит</h2>
+        <div class="steps-grid">
+          <div class="card step"><h3>Заявка</h3><p>Ты оставляешь заявку, и мы спокойно обсуждаем, что тебе интересно и какой у тебя сейчас график.</p></div>
+          <div class="card step"><h3>Выбор тарифа</h3><p>Я помогаю выбрать тариф, который подойдёт по наполнению и цели.</p></div>
+          <div class="card step"><h3>Доступ</h3><p>После оплаты ты получаешь доступ к платформе и можешь сразу начинать обучение.</p></div>
+          <div class="card step"><h3>Обучение</h3><p>Смотришь уроки в записи тогда, когда удобно. Без расписания и спешки.</p></div>
+          <div class="card step"><h3>Поддержка</h3><p>Если появляются вопросы, есть общий чат и связь со мной как с куратором.</p></div>
+          <div class="card step"><h3>Первые шаги</h3><p>Я помогаю понять, где искать клиентов и как начать предлагать свои услуги.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container about-grid">
+        <div class="about-photo">Здесь можно поставить фото Анастасии</div>
+        <div>
+          <h2 class="section-title">Немного обо мне</h2>
+          <p class="section-text">Меня зовут Анастасия. Я живу в небольшом посёлке возле Волги и уже больше 4 лет работаю удалённо.</p>
+          <p class="section-text">Сейчас я работаю маркетологом на Wildberries, освоила несколько онлайн-направлений и сама выстраиваю свой график. Я могу работать из дома, уделять время семье и не быть привязанной к офису или месту проживания.</p>
+          <p class="section-text">Фактически я живу в посёлке и получаю доход на уровне хорошей городской зарплаты благодаря удалённой работе. Поэтому мне хочется показать другим девушкам, что начать реально даже без опыта и идеальных условий.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title">Частые вопросы</h2>
+        <div class="faq-grid">
+          <details><summary>А если я вообще ничего не умею?</summary><p>Это нормально. Многие начинают с нуля. Для этого и есть уроки, поддержка и понятный порядок действий.</p></details>
+          <details><summary>А если у меня маленький ребёнок?</summary><p>Можно учиться в своём темпе: вечером, днём, по выходным или по 20–30 минут, когда получается.</p></details>
+          <details><summary>Курсы точно бессрочные?</summary><p>Да. Доступ к урокам остаётся навсегда. Ты можешь начать сразу, сделать паузу и вернуться позже.</p></details>
+          <details><summary>Когда я получу доступ к обучению?</summary><p>Доступ открывается после оплаты. Уроки уже записаны, поэтому не нужно ждать старта потока.</p></details>
+          <details><summary>А если я не знаю, что выбрать?</summary><p>Я помогу выбрать тариф и направление под твой график, интересы и цель.</p></details>
+          <details><summary>Помогаете ли вы с клиентами?</summary><p>Да. Я помогаю каждому ученику понять, где искать клиентов, как начать и как применять полученные навыки.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="final" id="contact">
+    <div class="container">
+      <h2 class="section-title">Хочешь попробовать удалённую работу?</h2>
+      <p class="section-text">Не нужно сразу во всём разбираться. Можно начать с консультации: я отвечу на вопросы, расскажу про тарифы и помогу понять, какой вариант подойдёт тебе.</p>
+      <a class="btn" href="https://wa.me/" target="_blank" rel="noopener">Получить консультацию</a>
+    </div>
+  </footer>
+</body>
+</html>
