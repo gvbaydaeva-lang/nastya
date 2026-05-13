@@ -494,8 +494,24 @@ p {
 }
 
 @media (max-width: 900px) {
+  .site-header .container {
+    flex-wrap: wrap;
+  }
+
   .nav {
-    display: none;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    gap: 14px 18px;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .nav a {
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .hero-grid,
