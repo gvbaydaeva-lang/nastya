@@ -8,10 +8,9 @@
 
 `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`, `6.jpg`, `7.jpg`, `8.jpg`, `99.jpg`.
 
-## Первый экран и иллюстрации секций
+## Первый экран
 
-- `images/hero-lifestyle.png` — главное фото в hero (можно заменить своим в том же стиле).
-- `section-thoughts.jpg`, `section-platform.jpg`, `section-community.jpg`, `section-time.jpg` — атмосферные фото для отдельных блоков (источник: [Unsplash](https://unsplash.com)); при желании замените на свои снимки с теми же именами файлов.
+В блоке hero используется файл `images/hero-lifestyle.png` (уютное домашнее рабочее место). При необходимости замените его своим снимком с тем же именем.
 
 ## Подключение к GitHub
 
