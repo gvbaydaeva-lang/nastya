@@ -28,43 +28,96 @@
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero hero--premium" aria-labelledby="hero-title">
+      <div class="hero__ambient" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
           <span class="eyebrow">Обучение удалённым навыкам</span>
-          <h1 id="hero-title">Хочешь работать из дома и зарабатывать онлайн, но не знаешь, с чего начать?</h1>
-          <p class="lead">Помогу разобраться в онлайн-сфере, выбрать направление и начать спокойно. Без давления, без сложных слов и без обещаний лёгких денег.</p>
-          <a href="#form" class="btn">Получить консультацию</a>
+          <h1 class="hero-title" id="hero-title">
+            Хочешь работать из дома и зарабатывать онлайн,
+            <span class="hero-title__accent">но не знаешь, с чего начать?</span>
+          </h1>
+          <p class="lead hero-lead">Помогу разобраться в онлайн-сфере, выбрать направление и начать спокойно. Без давления, без сложных слов и без обещаний лёгких денег.</p>
+
+          <p class="hero-fit-head">Подойдёт, если ты <span class="hero-fit-head__accent">хочешь</span>:</p>
+          <ul class="hero-benefits">
+            <li>
+              <span class="hero-benefits__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+              </span>
+              <span class="hero-benefits__text">иметь свои деньги</span>
+            </li>
+            <li>
+              <span class="hero-benefits__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <span class="hero-benefits__text">учиться в удобное время</span>
+            </li>
+            <li>
+              <span class="hero-benefits__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M7 20h10"/><path d="M9 16v4"/><path d="M15 16v4"/></svg>
+              </span>
+              <span class="hero-benefits__text">попробовать удалённую работу с нуля</span>
+            </li>
+            <li>
+              <span class="hero-benefits__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"><path d="M12 21s7-4.35 7-10a7 7 0 1 0-14 0c0 5.65 7 10 7 10Z"/><circle cx="12" cy="11" r="2.5"/></svg>
+              </span>
+              <span class="hero-benefits__text">не зависеть от города, офиса и жёсткого графика</span>
+            </li>
+          </ul>
+
+          <div class="hero-cta">
+            <a href="#form" class="btn btn--hero">Получить консультацию</a>
+          </div>
         </div>
 
-        <div class="hero-card">
-          <h3>Подойдёт, если ты хочешь:</h3>
-          <div class="hero-list">
-            <div>иметь свои деньги</div>
-            <div>учиться в удобное время</div>
-            <div>попробовать удалённую работу с нуля</div>
-            <div>не зависеть от города, офиса и жёсткого графика</div>
+        <div class="hero-visual">
+          <div class="hero-visual__shell">
+            <div class="hero-visual__glow" aria-hidden="true"></div>
+            <img
+              class="hero-visual__img"
+              src="images/hero-lifestyle.png"
+              width="800"
+              height="1000"
+              alt="Уютное домашнее рабочее место: ноутбук, тёплый свет, кофе"
+              decoding="async"
+              fetchpriority="high"
+            />
+            <div class="hero-visual__veil" aria-hidden="true"></div>
+            <div class="hero-visual__glass" aria-hidden="true"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section dark-block">
-      <div class="container">
-        <h2>Возможно, ты сейчас тоже об этом думаешь</h2>
-        <p>Хочется больше свободы и времени для себя, ребёнка, семьи и обычной жизни.</p>
-        <p>Не хочется зависеть только от работы, графика или декрета.</p>
-        <p>Но страшно начинать что-то новое, потому что непонятно, получится ли, что выбрать, хватит ли времени и можно ли вообще научиться этому с нуля.</p>
+    <section class="section dark-block section-split">
+      <div class="container section-split__grid">
+        <div class="section-split__copy">
+          <h2>Возможно, ты сейчас тоже об этом думаешь</h2>
+          <p>Хочется больше свободы и времени для себя, ребёнка, семьи и обычной жизни.</p>
+          <p>Не хочется зависеть только от работы, графика или декрета.</p>
+          <p>Но страшно начинать что-то новое, потому что непонятно, получится ли, что выбрать, хватит ли времени и можно ли вообще научиться этому с нуля.</p>
+        </div>
+        <figure class="section-split__figure">
+          <img src="images/section-thoughts.jpg" alt="Спокойная работа за ноутбуком в тёплом свете" width="800" height="600" loading="lazy" decoding="async" />
+        </figure>
       </div>
     </section>
 
-    <section class="section" id="platform">
-      <div class="container">
-        <h2>Что такое платформа</h2>
-        <p>Это платформа, где собрано много направлений для удалённой работы в одном месте.</p>
-        <p>Ты не покупаешь один курс на одну тему. У тебя есть доступ сразу к нескольким направлениям, чтобы спокойно посмотреть и понять, что тебе ближе.</p>
-        <p>Все уроки уже записаны. Можно учиться дома, в декрете, после работы или в любое удобное время.</p>
-
+    <section class="section section-split section-split--flip" id="platform">
+      <div class="container section-split__grid">
+        <figure class="section-split__figure">
+          <img src="images/section-platform.jpg" alt="Совместная работа и обучение онлайн" width="800" height="600" loading="lazy" decoding="async" />
+        </figure>
+        <div class="section-split__copy">
+          <h2>Что такое платформа</h2>
+          <p>Это платформа, где собрано много направлений для удалённой работы в одном месте.</p>
+          <p>Ты не покупаешь один курс на одну тему. У тебя есть доступ сразу к нескольким направлениям, чтобы спокойно посмотреть и понять, что тебе ближе.</p>
+          <p>Все уроки уже записаны. Можно учиться дома, в декрете, после работы или в любое удобное время.</p>
+        </div>
+      </div>
+      <div class="container platform-cards">
         <div class="cards">
           <div class="card">
             <h3>Доступ навсегда</h3>
@@ -99,22 +152,32 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <h2>Ты не остаёшься одна</h2>
-        <p>Я как куратор платформы всегда остаюсь на связи.</p>
-        <p>У нас есть общий чат всех учеников, где девушки общаются, помогают друг другу, делятся опытом и задают вопросы.</p>
-        <p>Если что-то непонятно — можно обратиться за помощью.</p>
-        <p>Также я помогаю каждому ученику с поиском первых клиентов и подсказываю, как начать применять навыки на практике.</p>
+    <section class="section section-split">
+      <div class="container section-split__grid">
+        <div class="section-split__copy">
+          <h2>Ты не остаёшься одна</h2>
+          <p>Я как куратор платформы всегда остаюсь на связи.</p>
+          <p>У нас есть общий чат всех учеников, где девушки общаются, помогают друг другу, делятся опытом и задают вопросы.</p>
+          <p>Если что-то непонятно — можно обратиться за помощью.</p>
+          <p>Также я помогаю каждому ученику с поиском первых клиентов и подсказываю, как начать применять навыки на практике.</p>
+        </div>
+        <figure class="section-split__figure">
+          <img src="images/section-community.jpg" alt="Поддержка и общение в команде" width="800" height="600" loading="lazy" decoding="async" />
+        </figure>
       </div>
     </section>
 
-    <section class="section dark-block">
-      <div class="container">
-        <h2>Тебе не нужно много свободного времени</h2>
-        <p>Многие девушки проходят обучение в декрете или параллельно с работой.</p>
-        <p>Можно заниматься даже по 20–30 минут в день. Ты сама выбираешь, когда тебе удобно учиться.</p>
-        <p>Без жёсткого расписания и гонки.</p>
+    <section class="section dark-block section-split section-split--flip">
+      <div class="container section-split__grid">
+        <figure class="section-split__figure">
+          <img src="images/section-time.jpg" alt="Пауза с кофе — обучение в своём темпе" width="800" height="600" loading="lazy" decoding="async" />
+        </figure>
+        <div class="section-split__copy">
+          <h2>Тебе не нужно много свободного времени</h2>
+          <p>Многие девушки проходят обучение в декрете или параллельно с работой.</p>
+          <p>Можно заниматься даже по 20–30 минут в день. Ты сама выбираешь, когда тебе удобно учиться.</p>
+          <p>Без жёсткого расписания и гонки.</p>
+        </div>
       </div>
     </section>
 
@@ -214,7 +277,7 @@
         <h2>Можно просто начать постепенно</h2>
         <p>Не нужно менять всю жизнь за один день. Если давно думаешь о том, чтобы попробовать удалённую работу, начни с консультации.</p>
         <!-- href кнопки: вставьте ссылку на мессенджер или форму заявки -->
-        <a href="#" class="btn">Получить консультацию</a>
+        <a href="#" class="btn btn--hero">Получить консультацию</a>
       </div>
     </section>
   </main>

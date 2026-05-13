@@ -8,6 +8,11 @@
 
 `1.jpg`, `2.jpg`, `3.jpg`, `4.jpg`, `6.jpg`, `7.jpg`, `8.jpg`, `99.jpg`.
 
+## Первый экран и иллюстрации секций
+
+- `images/hero-lifestyle.png` — главное фото в hero (можно заменить своим в том же стиле).
+- `section-thoughts.jpg`, `section-platform.jpg`, `section-community.jpg`, `section-time.jpg` — атмосферные фото для отдельных блоков (источник: [Unsplash](https://unsplash.com)); при желании замените на свои снимки с теми же именами файлов.
+
 ## Подключение к GitHub
 
 1. Создайте пустой репозиторий на [GitHub](https://github.com/new) (без README, если уже есть файлы локально).
